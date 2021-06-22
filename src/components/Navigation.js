@@ -5,7 +5,7 @@ import {
   useMediaQuery,
   useColorModeValue,
 } from "@chakra-ui/react"
-import MobileNavigation from "./MobileNavigation"
+import MobileNavigation from "./MobileNavigationDrawer"
 import NavigationListItems from "./NavigationListItems"
 import SwitchColorMode from "./SwitchColorMode"
 const Navigation = () => {
