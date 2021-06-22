@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useCountUp } from "react-countup"
 import PricingSwitch from "./PricingSwitch"
 import {
   Box,
@@ -26,12 +26,18 @@ const Pricing = () => {
     "Speedy build tooling",
     "6 months free support included",
   ]
-  const [price, setPrice] = useState(config.yearly)
+  const { countUp, update } = useCountUp({
+    start: config.yearly,
+    end: config.monthly,
+    delay: 0,
+    startOnMount: false,
+    duration: 0.6,
+  })
   const handleSwitchChange = (e) => {
     if (e.target.checked) {
-      setPrice(config.monthly)
+      update(config.monthly)
     } else {
-      setPrice(config.yearly)
+      update(config.yearly)
     }
   }
 
@@ -56,7 +62,7 @@ const Pricing = () => {
             </Center>
             <Center>
               <Text as="b" fontSize="6xl">
-                {price}
+                {countUp}
               </Text>{" "}
               /mo
             </Center>
