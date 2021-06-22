@@ -6,6 +6,7 @@ import {
   List,
   ListItem,
   ListIcon,
+  useColorModeValue,
   // SimpleGrid
 } from "@chakra-ui/react"
 import working from "../assets/working.svg"
@@ -17,8 +18,13 @@ const ListFeatures = () => {
     "Tech support",
     "Integration ready",
   ]
+  const bg = useColorModeValue("gray.50", "teal.700")
+  /*
+  const {colorMode} = useColorMode()
+  const bg = colorMode === "light" ? "gray.50" : "teal.700"
+  */
   return (
-    <Box as="section" bg="gray.50" py="24">
+    <Box as="section" bg={bg} py="24">
       <Container maxW="container.lg">
         <Stack
           direction={["column", null, "row"]}
